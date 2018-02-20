@@ -1,0 +1,15 @@
+var express = require('express');
+
+var app = express();
+ 
+var Gallery = require('express-photo-gallery');
+  
+var options = {
+  title: 'My Awesome Photo Gallery'
+};
+ 
+app.use('/images', Gallery('/images', options));
+
+console.log(Gallery('/images',options));
+
+app.listen(3000);
