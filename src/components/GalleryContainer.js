@@ -1,7 +1,7 @@
 
 
 // Cache gallery container
-const galleryContainer = document.querySelector('.react-gallery');
+const galleryContainer = document.querySelector('.galleryContainer');
 
 // Create new array with URLs for images
 let imgUrls = [

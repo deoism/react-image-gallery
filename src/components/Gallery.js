@@ -1,3 +1,8 @@
+import React from 'react';
+import imgUrls from './GalleryContainer';
+import GalleryImage from './GalleryImage';
+import GalleryModal from './GalleryModal';
+
 // Component for gallery
 class Gallery extends React.Component{
     constructor(props) {
@@ -52,7 +57,5 @@ class Gallery extends React.Component{
     }
    }
 
-   // Let's render the whole thing
-ReactDOM.render(
-    <Gallery imgUrls={imgUrls} />
-   , galleryContainer);
+
+ export default Gallery;
