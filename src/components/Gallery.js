@@ -1,8 +1,9 @@
 import React from 'react';
-import imgUrls from './GalleryContainer';
+import imgUrls  from './GalleryContainer';
 import GalleryImage from './GalleryImage';
 import GalleryModal from './GalleryModal';
 
+ 
 // Component for gallery
 class Gallery extends React.Component{
     constructor(props) {
@@ -20,10 +21,11 @@ class Gallery extends React.Component{
     
     render() {
      return(
+       console.log(imgUrls),
       <div refs='gallery-container' className='container-fluid gallery-container'>
        <div className='row'>
         {
-         imgUrls.map((url, index) => {
+         imgUrls.imgUrls.map((url, index) => {
           return <div className='col-sm-6 col-md-3 col-xl-2'>
            <div className='gallery-card'>
             <GalleryImage className='gallery-thumbnail' src={url} alt={'Image number ' + (index + 1)} />

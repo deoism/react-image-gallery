@@ -1,7 +1,7 @@
-
+ 
 
 // Cache gallery container
-const galleryContainer = document.querySelector('.galleryContainer');
+const galleryContainer = document.getElementsByClassName('.galleryContainer');
 
 // Create new array with URLs for images
 let imgUrls = [
@@ -19,4 +19,4 @@ let imgUrls = [
  'https://source.unsplash.com/vZlTg_McCDo/800x600'
 ];
 
-export default {galleryContainer, imgUrls};
+export default { galleryContainer, imgUrls };
