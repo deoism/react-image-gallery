@@ -20,6 +20,7 @@ class Gallery extends React.Component{
     }
     
     render() {
+
      return(
        console.log(imgUrls),
       <div refs='gallery-container' className='container-fluid gallery-container'>
@@ -27,10 +28,10 @@ class Gallery extends React.Component{
         {
          imgUrls.imgUrls.map((url, index) => {
           return <div className='col-sm-6 col-md-3 col-xl-2'>
-           <div className='gallery-card'>
-            <GalleryImage className='gallery-thumbnail' src={url} alt={'Image number ' + (index + 1)} />
+           <div className='gallery-card' id={(index + 1)}>
+            <GalleryImage className='gallery-thumbnail' src={url} alt={'Image number ' + (index + 1)} onClick={(e) => this.openModal(url, e)} />
     
-            <span className='card-icon-open fa fa-expand' value={url} onClick={(e) => this.openModal(url, e)}></span>
+            <span className='card-icon-open fa fa-expand' value={url} ></span>
            </div>
          </div>
         })
