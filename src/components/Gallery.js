@@ -7,6 +7,7 @@ import GalleryModal from './GalleryModal';
 // Component for gallery
 class Gallery extends React.Component{
     constructor(props) {
+
      super(props);
     
      this.state = {
@@ -26,18 +27,22 @@ class Gallery extends React.Component{
        <div className='row'>
         {
          imgUrls.imgUrls.map((url, index) => {
-          return <div className='col-sm-6 col-md-3 col-xl-2'>
+          return <div key={'image' + (index + 1 )} className='col-sm-6 col-md-3 col-xl-2'>
            <div className='gallery-card'>
-            <GalleryImage className='gallery-thumbnail' src={url} alt={'Image number ' + (index + 1)} />
+            <span isopen={this.props.isOpen} 
+            className='card-icon-open fa fa-expand' 
+            value={url} 
+            onClick={(e) => this.openModal(url, e)}>
+             <GalleryImage className='gallery-thumbnail' src={url} alt={'Image number ' + (index + 1)} />
     
-            <span className='card-icon-open fa fa-expand' value={url} onClick={(e) => this.openModal(url, e)}></span>
+           </span>
            </div>
          </div>
         })
        }
       </div>
     
-      <GalleryModal isOpen={this.state.showModal} onClick={this.closeModal} src={this.state.url} /> 
+      <GalleryModal iso pen={this.state.showModal} onClick={this.closeModal} src={this.state.url} /> 
      </div>
      )
     }
