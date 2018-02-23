@@ -8,8 +8,7 @@ import GalleryModal from './GalleryModal';
 class Gallery extends React.Component{
     constructor(props) {
 
-     super(props);
-    
+     super(props); 
      this.state = {
       showModal: false,
       url: ''
@@ -21,15 +20,14 @@ class Gallery extends React.Component{
     }
     
     render() {
-     return(
-       console.log(imgUrls),
+     return( 
       <div refs='gallery-container' className='container-fluid gallery-container'>
        <div className='row'>
         {
          imgUrls.imgUrls.map((url, index) => {
           return <div key={'image' + (index + 1 )} className='col-sm-6 col-md-3 col-xl-2'>
            <div className='gallery-card'>
-            <span isopen={this.props.isOpen} 
+            <span isopen={this.props.isopen} 
             className='card-icon-open fa fa-expand' 
             value={url} 
             onClick={(e) => this.openModal(url, e)}>
@@ -42,15 +40,16 @@ class Gallery extends React.Component{
        }
       </div>
     
-      <GalleryModal iso pen={this.state.showModal} onClick={this.closeModal} src={this.state.url} /> 
+      <GalleryModal isopen={this.props.isopen} onClick={this.state.closeModal} src={this.state.url} /> 
      </div>
      )
     }
    
     // Function for opening modal dialog
     openModal(url, e) {
+      alert("open modal " + url);
      this.setState({
-      showModal: true,
+      showModal:"true",
       url: url
      })
     };
@@ -58,7 +57,7 @@ class Gallery extends React.Component{
     // Function for closing modal dialog
     closeModal() {
      this.setState({
-      showModal: false,
+      showModal: "false",
       url: ''
      })
     }
