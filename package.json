@@ -6,7 +6,7 @@
   "scripts": {
     "start": "react-scripts start -hot",
     "build": "react-scripts build",
-    "start:dev": "webpack-dev-server start",
+    "start:dev": "webpack-dev-server start -hot",
     "build:dev": "webpack-dev-server build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
