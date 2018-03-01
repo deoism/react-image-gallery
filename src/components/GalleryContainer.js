@@ -4,7 +4,15 @@
 const galleryContainer = document.getElementsByClassName('.galleryContainer');
 
 // Create new array with URLs for images
-let imgUrls = [
+function importAll(r) {
+    return r.keys().map(r);
+  } 
+  let imgUrls = [];
+  
+  let images = importAll(require.context('./images/', false, /\.(png|jpe?g|svg)$/));
+
+  if(!"https://sourceunsplash.com/3Z70SDuYs5g/800x600" ===  '404' || " " ){
+     imgUrls.push([
  'https://source.unsplash.com/3Z70SDuYs5g/800x600',
  'https://source.unsplash.com/01vFmYAOqQ0/800x600',
  'https://source.unsplash.com/2Bjq3A7rGn4/800x600',
@@ -17,6 +25,10 @@ let imgUrls = [
  'https://source.unsplash.com/E4944K_4SvI/800x600',
  'https://source.unsplash.com/-hI5dX2ObAs/800x600',
  'https://source.unsplash.com/vZlTg_McCDo/800x600'
-];
+]);
+  }
+  
+  imgUrls[0].push(...images);
 
+console.log(...imgUrls)  
 export default { galleryContainer, imgUrls };

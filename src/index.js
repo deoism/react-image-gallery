@@ -5,6 +5,8 @@ import Gallery from './components/Gallery.js';
 import imgUrls from './components/GalleryContainer'; 
 
 
- const element =  <Gallery url={imgUrls} />;
+
+ let element =  <Gallery url={imgUrls} />;
+
  const target = document.querySelector('.galleryContainer');
  ReactDOM.render(element, target);

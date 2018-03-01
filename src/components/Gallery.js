@@ -1,7 +1,9 @@
-import React from 'react';
+import React from 'react';  
 import imgUrls  from './GalleryContainer';
 import GalleryImage from './GalleryImage';
 import GalleryModal from './GalleryModal';
+
+
 
  
 // Component for gallery
@@ -16,7 +18,8 @@ class Gallery extends React.Component{
       url: '',
       name:'',
       alt:'',
-      closeModal:{}
+      closeModal: {}
+      
      }
     
      this.openModal = this.openModal.bind(this);
@@ -25,33 +28,43 @@ class Gallery extends React.Component{
     }
     
     render() {
+   
+     
      return( 
-      <div refs='gallery-container' className='container-fluid gallery-container'>
-       <GalleryModal 
-        isopen={this.isopen} 
-        name={this.state.name} 
-        onClick={this.state.closeModal} 
-        src={this.state.url}
-        closeModal = {this.closeModal}
-        /> 
+
+
+      <div refs='galleryContainer' className='container-grid  galleryContainer    '>
+        <GalleryModal
+         
+          className={'col-md-2'}
+          isopen={this.state.isopen} 
+          closemodal={this.closeModal}
+          src={this.state.url}  
+          alt={this.state.url}
+          name={this.state.name}
+          aria-labelledby="contained-modal-title"
+       />
        <div className='row'>
         {
-          
-         imgUrls.imgUrls.map((url, index) => {
-//           alert(url)
-          return <div key={'image ' + (index + 1 )} className='col-sm-6 col-md-3 col-xl-2'>
+         // load remote  images with imgUrls[0] 
+        //  load local images with imgUrls[1]
+        imgUrls.imgUrls[0].map((url, index) => {
+
+          return <div  key={'image ' + (index + 1 )} className='col-sm-1 col-md-1 col-xs-1  '>
            <div className='gallery-card'>
             <span isopen={this.state.isopen} 
-                name={'Image number ' + (index + 1)} 
             className='card-icon-open fa fa-expand' 
-            value={url} 
-            onClick={(e) => this.openModal(url, e)}>
+            value={url} onClick={(e) => this.openModal(url, e)}>
 
                 <GalleryImage 
                 className='gallery-thumbnail' 
-                onclick={this.showModal}  
-                src={url} 
-                alt={'Image number ' + (index + 1)} />
+                src={url}  
+                alt={'Image number ' + (index + 1)}
+                name={this.state.name} 
+                isopen={this.state.isopen}
+
+
+                 />
     
            </span>
          
@@ -65,24 +78,30 @@ class Gallery extends React.Component{
      )
     }
    
-    // Function for opening modal dialog
-    openModal(url, e) {
-      console.log("opening modal  " + url);
-     this.setState({
-      showModal:"true",
-      url: url, 
-      
-     })
-    };
    
     // Function for closing modal dialog
     closeModal() {
       console.log("closing Modal " );
      this.setState({
       showModal: "false",
-      url: ''
+      isopen: "false",
+      url: '',
+      name:'',
+      alt:'', 
      })
     }
+
+    
+    // Function for opening modal dialog
+    openModal(url, e) { 
+      console.log("opening modal  " + url);
+     this.setState({ 
+      showModal:"true",
+      isopen:"true",
+      url: url, 
+      closemodal:this.closeModal
+     })
+    };
    }
 
 

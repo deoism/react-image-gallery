@@ -1,28 +1,43 @@
 import React from 'react'; 
- 
-// Component for gallery modal
+import {Modal, Button, Image , Grid, Row, Col} from 'react-bootstrap'; 
+ // Component for gallery modal
 class GalleryModal extends React.Component {
     render() {
-        console.log("this is props isopen :" +  (this.props.isopen)); 
+      
      if (this.props.isopen === "false") {
+
       return null;
      }  
-      console.log("is src? " + this.props.src);
-     return(
-      <div 
-      isopen={this.props.isopen} 
-      className='modal-overlay'  
-      onClick={this.props.closeModal} 
-      name={this.props.name}>
-       <div className='modal-body'>
-        <a className='modal-close'   >
-        <span className='fa fa-times'> </span>    
-        <img src={this.props.src} name={this.props.name} alt={this.props.alt}/>  
-        </a>  
-       </div>
-      </div>
+     console.log(" this isopen " + this.props.isopen)
+ return(  
+       <div className="static-modal">
+  <Modal.Dialog isopen={this.props.isopen} className={this.className}  >
+  {this.showModal} 
+    <Modal.Header>
+      <Modal.Title>
+      {this.props.name}
+      </Modal.Title>
+    </Modal.Header>
+
+    <Modal.Body> 
+<Grid col-xs={2} col-md={2} col-sm={2}>
+    <Row>
+      <Col  >
+        <Image src={this.props.src} circle    /> 
+      </Col>
+                </Row>
+                </Grid>
+    </Modal.Body>
+
+    <Modal.Footer>
+      <Button onClick={this.props.closemodal} isopen={this.props.isopen} bsStyle="primary" bsSize="large" >Close</Button>
+    
+    </Modal.Footer>
+  </Modal.Dialog>
+</div>
+       
      )
     }
-   } 
-
+   }
+ 
    export default GalleryModal;
