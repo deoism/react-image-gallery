@@ -33,7 +33,7 @@ class Gallery extends React.Component{
      return( 
 
 
-      <div refs='galleryContainer' className='container-grid  galleryContainer    '>
+      <div refs='galleryContainer' className='container-grid  galleryContainer'>
         <GalleryModal
          
           className={'col-md-2'}
@@ -60,7 +60,7 @@ class Gallery extends React.Component{
                 className='gallery-thumbnail' 
                 src={url}  
                 alt={'Image number ' + (index + 1)}
-                name={this.state.name} 
+                name={'Image '+ index+1} 
                 isopen={this.state.isopen}
 
 

@@ -14,12 +14,16 @@ html {
 }
 
 body {
- position: absolute;
- font-size: 100%;
+  margin:0;
+  padding:0;
+  height:auto;
+  width:100%;
+ font-size: 1em;
 }
-.gallery-container {
-    position:absolute;  
+.gallery-container {  
     z-index:50; 
+    position:absolute;
+    width:75%;
  padding-top: .9375rem;
  overflow:hidden;
  display:block;
@@ -30,17 +34,21 @@ body {
  overflow: hidden;
  margin-bottom: 1.875rem;
  height:200px;
+ width:200px;
 }
 
 .gallery-thumbnail {
+  overflow:hidden;
  max-width: 200px;
- height: 200px; 
+ max-height: 200px; 
  border-radius: $radius;
+ overflow:hidden;
 }
 
 .card-icon-open {
  display: block;
  position: absolute;
+ overflow:hidden;
  top: 50%;
  left: 50%;
  padding:5px;
@@ -66,6 +74,7 @@ body {
 .gallery-thumbnail ~ .card-icon-open:focus,
 .gallery-thumbnail ~ .card-icon-open:hover {
  opacity: 1;
+ overflow:hidden;
 } 
 .modal-container {
     position: relative;
@@ -75,26 +84,22 @@ body {
   }
 .modal-content {
     display: block; 
+    overflow:hidden;
     justify-content:center;
     top: 0;    
     background: rgba(21,21,21,.75);
     transform: translate(-50%, -50%);
    
-}
-.modal-body { 
- z-index: 110;
- display:block;
+} 
+.modal-body {  
+  position:absolute;
  padding: 0;  
- overflow:hidden; 
- overflow: auto;
- border-radius: $radius; transition: $transition;
+ overflow:hidden;  
+ border-radius: $radius; 
+ transition: $transition;
  transform: translate(-50%, -50%);
  background-color:black;
-}
-.modal-body.img {
-width:500px;
-
-}
+} 
 .modal-close { 
  top: 0;
  right: 8px;

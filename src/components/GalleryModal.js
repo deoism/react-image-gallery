@@ -1,5 +1,5 @@
 import React from 'react'; 
-import {Modal, Button, Image , Grid, Row, Col} from 'react-bootstrap'; 
+import {Modal, Button, Image } from 'react-bootstrap'; 
  // Component for gallery modal
 class GalleryModal extends React.Component {
     render() {
@@ -10,23 +10,20 @@ class GalleryModal extends React.Component {
      }  
      console.log(" this isopen " + this.props.isopen)
  return(  
-       <div className="static-modal">
-  <Modal.Dialog isopen={this.props.isopen} className={this.className}  >
+       <div className="static-modal responsive">
+  <Modal.Dialog isopen={this.props.isopen} className={this.className}   >
   {this.showModal} 
     <Modal.Header>
+    <Button onClick={this.props.closemodal} isopen={this.props.isopen} bsStyle="primary" bsSize="large" >Close</Button>
+    
       <Modal.Title>
       {this.props.name}
       </Modal.Title>
     </Modal.Header>
 
-    <Modal.Body> 
-<Grid col-xs={2} col-md={2} col-sm={2}>
-    <Row>
-      <Col  >
-        <Image src={this.props.src} circle    /> 
-      </Col>
-                </Row>
-                </Grid>
+    <Modal.Body>  
+        <Image src={this.props.src}  className="img-responsive" rounded  responsive    /> 
+    
     </Modal.Body>
 
     <Modal.Footer>
