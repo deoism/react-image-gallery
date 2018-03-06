@@ -33,10 +33,9 @@ class Gallery extends React.Component{
      return( 
 
 
-      <div refs='galleryContainer' className='container-grid  galleryContainer'>
-        <GalleryModal
-         
-          className={'col-md-2'}
+      <div refs='galleryContainer'  responsive>
+        <GalleryModal    
+          className={'col-sm-4 col-md-4 col-xs-4'}       
           isopen={this.state.isopen} 
           closemodal={this.closeModal}
           src={this.state.url}  
@@ -49,18 +48,20 @@ class Gallery extends React.Component{
          // load remote  images with imgUrls[0] 
         //  load local images with imgUrls[1]
         imgUrls.imgUrls[0].map((url, index) => {
-
-          return <div  key={'image ' + (index + 1 )} className='col-sm-1 col-md-1 col-xs-1  '>
-           <div className='gallery-card'>
+          let name='Image number ' + (index + 1);
+          return <div  key={'image ' + (index + 1 )} 
+          className='gallery-card col-sm-1 col-md-1 col-xs-3 '>
+           
             <span isopen={this.state.isopen} 
+            name={'Image number ' + (index + 1)}
             className='card-icon-open fa fa-expand' 
-            value={url} onClick={(e) => this.openModal(url, e)}>
+             value={url} onClick={(e) => this.openModal(name,url, e)}>
 
                 <GalleryImage 
+                rounded
                 className='gallery-thumbnail' 
                 src={url}  
                 alt={'Image number ' + (index + 1)}
-                name={'Image '+ index+1} 
                 isopen={this.state.isopen}
 
 
@@ -68,8 +69,7 @@ class Gallery extends React.Component{
     
            </span>
          
-           </div>
-         </div>
+           </div> 
         })
        }
       </div>
@@ -93,13 +93,14 @@ class Gallery extends React.Component{
 
     
     // Function for opening modal dialog
-    openModal(url, e) { 
+    openModal(name,url, e) { 
       console.log("opening modal  " + url);
      this.setState({ 
       showModal:"true",
       isopen:"true",
       url: url, 
-      closemodal:this.closeModal
+      name:name,
+       closemodal:this.closeModal
      })
     };
    }

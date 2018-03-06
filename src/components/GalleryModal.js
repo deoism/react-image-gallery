@@ -11,7 +11,7 @@ class GalleryModal extends React.Component {
      console.log(" this isopen " + this.props.isopen)
  return(  
        <div className="static-modal responsive">
-  <Modal.Dialog isopen={this.props.isopen} className={this.className}   >
+  <Modal.Dialog isopen={this.props.isopen} className={this.className} col-sm-4 col-md-4 col-xs-4  >
   {this.showModal} 
     <Modal.Header>
     <Button onClick={this.props.closemodal} isopen={this.props.isopen} bsStyle="primary" bsSize="large" >Close</Button>
@@ -22,7 +22,7 @@ class GalleryModal extends React.Component {
     </Modal.Header>
 
     <Modal.Body>  
-        <Image src={this.props.src}  className="img-responsive" rounded  responsive    /> 
+        <Image src={this.props.src}  className="img-responsive responsive" rounded    /> 
     
     </Modal.Body>
 
