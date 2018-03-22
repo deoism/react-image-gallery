@@ -6,42 +6,35 @@ $transition: all .25s ease-in-out;
  
 
 html {
- font-size: 16px;
- width:100%; 
+ font-size: 16px;   
+}  
 
+body { 
+ font-size: 100%; 
+ overflow-x:hidden; 
+ overflow:wrap;
 }
-
-body {
-  margin:0;
-  padding:0;
- font-size: 100%;
-}
-.gallery-container {
-  display:block;
-  position:absolute;  
+.gallery-container { 
+  display:block; 
   z-index:50; 
- padding-top: .9375rem;
- overflow:hidden;
- display:block;
- align-content:center;
+ padding-top: .9375rem;  
+}
+#crank{  
+  overflow-x:hidden;
+
+}
+div.gallery-card {    
+ margin-bottom: 1.875rem; 
+ border:1px thin solid red;
 }
 
-.gallery-card {
- position: relative;
- overflow: hidden;
- margin-bottom: 1.875rem;
- height:200px;
+span.img.gallery-thumbnail { 
+  display:inline-block;
+ border-radius: $radius; 
+ height:200px; 
 }
 
-.gallery-thumbnail {
- max-width: 200px; 
- border-radius: $radius;
-}
-
-.card-icon-open {
- display: block;
- position: relative;
- height:300px;
+span.card-icon-open {  
  overflow:hidden;
  top: 50%;
  left: 50%;
@@ -56,6 +49,7 @@ body {
  &:focus,
  &:hover { 
   color: $black;
+  border:1px solid black;
  }
 }
 
@@ -69,14 +63,13 @@ body {
 .gallery-thumbnail ~ .card-icon-open:hover {
  opacity: 1;
 } 
-.modal-container {
-    position: relative;
-  }
-  Image{
-    max-height:50%;
-  }
+ div.modal-dialogue{
+  // width: 40%;
+ }
+   
   .modal-container .modal, .modal-container .modal-backdrop {
-    position: absolute;
+    position: relative;
+
   }
 .modal-content {
     display: block; 
@@ -86,20 +79,18 @@ body {
     transform: translate(-50%, -50%);
    
 }
-.modal-body { 
- z-index: 110;
- display:block;
- padding: 0;  
- overflow:hidden; 
- overflow: auto;
- border-radius: $radius; transition: $transition;
+div.modal-body {   
+ z-index: 110; 
+ padding: 0;   
+ border-radius: $radius;
+ transition: $transition;
  transform: translate(-50%, -50%);
  background-color:black;
-}
-.modal-body.img {
-width:500px;
 
 }
+ div.modal-footer{
+   position:relative;
+ }
 .modal-close { 
  top: 0;
  right: 8px;

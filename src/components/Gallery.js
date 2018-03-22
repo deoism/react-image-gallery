@@ -2,7 +2,8 @@ import React from 'react';
 import imgUrls  from './GalleryContainer';
 import GalleryImage from './GalleryImage';
 import GalleryModal from './GalleryModal';
-
+import Header from './Header';
+require('../css/style.scss');
 
 
  
@@ -32,10 +33,10 @@ class Gallery extends React.Component{
      
      return( 
 
-
-      <div refs='galleryContainer'  responsive>
+      <section id="crank"   >
+        <Header/>
         <GalleryModal    
-          className={'col-sm-4 col-md-4 col-xs-4'}       
+          className={'modal-dialogue modal fade'}       
           isopen={this.state.isopen} 
           closemodal={this.closeModal}
           src={this.state.url}  
@@ -45,19 +46,19 @@ class Gallery extends React.Component{
        />
        <div className='row'>
         {
-         // load remote  images with imgUrls[0] 
-        //  load local images with imgUrls[1]
-        imgUrls.imgUrls[0].map((url, index) => {
+         // all  images with imgUrls[0]
+         // local images imgUrls  
+        imgUrls.imgUrls.map((url, index) => {
           let name='Image number ' + (index + 1);
-          return <div  key={'image ' + (index + 1 )} 
-          className='gallery-card col-sm-1 col-md-1 col-xs-3 '>
+        return <div  key={'image ' + (index + 1 )} 
+          className='gallery-card '>
            
             <span isopen={this.state.isopen} 
             name={'Image number ' + (index + 1)}
-            className='card-icon-open fa fa-expand' 
+            className='card-icon-open col-sm-1 col-md-1 col-xs-1 ' 
              value={url} onClick={(e) => this.openModal(name,url, e)}>
 
-                <GalleryImage 
+                <GalleryImage col-sm-1 col-md-1 col-lg-1
                 rounded
                 className='gallery-thumbnail' 
                 src={url}  
@@ -74,7 +75,7 @@ class Gallery extends React.Component{
        }
       </div>
     
-     </div>
+     </section>
      )
     }
    
@@ -88,6 +89,7 @@ class Gallery extends React.Component{
       url: '',
       name:'',
       alt:'', 
+      
      })
     }
 

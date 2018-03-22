@@ -10,28 +10,34 @@ class GalleryModal extends React.Component {
      }  
      console.log(" this isopen " + this.props.isopen)
  return(  
-       <div className="static-modal responsive">
-  <Modal.Dialog isopen={this.props.isopen} className={this.className} col-sm-4 col-md-4 col-xs-4  >
+      
+  <Modal.Dialog isopen={this.props.isopen}  className={this.className}  >
   {this.showModal} 
     <Modal.Header>
-    <Button onClick={this.props.closemodal} isopen={this.props.isopen} bsStyle="primary" bsSize="large" >Close</Button>
     
       <Modal.Title>
-      {this.props.name}
+      { this.props.name   }
       </Modal.Title>
     </Modal.Header>
 
     <Modal.Body>  
-        <Image src={this.props.src}  className="img-responsive responsive" rounded    /> 
+        <Image src={this.props.src} onClick={this.props.closemodal} className="img-responsive " rounded    /> 
     
     </Modal.Body>
 
     <Modal.Footer>
-      <Button onClick={this.props.closemodal} isopen={this.props.isopen} bsStyle="primary" bsSize="large" >Close</Button>
+      <Button 
+      onClick={this.props.closemodal} 
+      data-dismis={"modal"} 
+      type={'button'} 
+      className={'btn btn-default'}
+      isopen={this.props.isopen} 
+      bsStyle="primary" 
+      bsSize="large" 
+      >Close</Button>
     
     </Modal.Footer>
-  </Modal.Dialog>
-</div>
+  </Modal.Dialog> 
        
      )
     }
