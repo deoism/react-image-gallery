@@ -4,19 +4,17 @@ import React from 'react';
 
 
 
-class Header extends React.Component{
+export default class Header extends React.Component{
 
-
-    render(){
+ render(){
         return(
-        <div id={'Gallery-Header'}>
-            <h2>Deoism Gallery</h2>
-            <p>Images uploaded remote and locally</p>
+        <div id={'Gallery-Header'}  className={"  grid col "} >
+            <span className={"left  col-3"}>nav</span>
+            <span className={"left  col-3"}>Deoism Gallery</span>
+            <span className={"right col-3"}>menu</span>
+            
         </div>
          ) }
 
 
-
-}
-
-export default Header;
+        }

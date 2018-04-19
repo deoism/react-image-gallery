@@ -36,7 +36,7 @@ class Gallery extends React.Component{
       <section id="crank"   >
         <Header/>
         <GalleryModal    
-          className={'modal-dialogue modal fade'}       
+          className={'modal-dialogue modal fade col-lg-3} '}       
           isopen={this.state.isopen} 
           closemodal={this.closeModal}
           src={this.state.url}  
@@ -54,17 +54,18 @@ class Gallery extends React.Component{
           className='gallery-card '>
            
             <span isopen={this.state.isopen} 
-            name={'Image number ' + (index + 1)}
-            className='card-icon-open col-sm-1 col-md-1 col-xs-1 ' 
-             value={url} onClick={(e) => this.openModal(name,url, e)}>
+            name={name}
+            className='card-icon-open col-xs-2 col-sm-1 col-md-1 ' 
+             value={url}
+             
+                onClick={(e) => this.openModal(name,url, e)} >
 
                 <GalleryImage col-sm-1 col-md-1 col-lg-1
                 rounded
                 className='gallery-thumbnail' 
                 src={url}  
-                alt={'Image number ' + (index + 1)}
+                alt={name}
                 isopen={this.state.isopen}
-
 
                  />
     

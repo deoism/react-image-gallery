@@ -7,21 +7,23 @@ class GalleryModal extends React.Component {
      if (this.props.isopen === "false") {
 
       return null;
-     }  
+     }  else {
      console.log(" this isopen " + this.props.isopen)
  return(  
       
   <Modal.Dialog isopen={this.props.isopen}  className={this.className}  >
-  {this.showModal} 
-    <Modal.Header>
+    {this.showModal} 
+  <Modal.Header>
     
-      <Modal.Title>
+  <Modal.Title>
       { this.props.name   }
       </Modal.Title>
     </Modal.Header>
 
     <Modal.Body>  
-        <Image src={this.props.src} onClick={this.props.closemodal} className="img-responsive " rounded    /> 
+        <Image src={this.props.src} onClick={this.props.closemodal} className={"img-responsive  responsive rounded "}        
+ aria-labelledby="contained-modal-title" 
+      /> 
     
     </Modal.Body>
 
@@ -40,7 +42,7 @@ class GalleryModal extends React.Component {
   </Modal.Dialog> 
        
      )
-    }
+   } }
    }
  
    export default GalleryModal;

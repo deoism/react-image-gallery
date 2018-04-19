@@ -1,7 +1,7 @@
 // Variables
 $black: #111;
 $radius: 4px;
-$transition: all .25s ease-in-out;
+$transition: all 1.25s ease-in-out;
 
  
 
@@ -11,45 +11,53 @@ html {
 
 body { 
  font-size: 100%; 
- overflow-x:hidden; 
- overflow:wrap;
+ overflow-x:hidden;  
 }
-.gallery-container { 
+.gallery-container {
+  width:100%;
+  overflow:hidden;
+  height:auto;
+  position:absolute; 
   display:block; 
   z-index:50; 
  padding-top: .9375rem;  
 }
 #crank{  
   overflow-x:hidden;
-
+width:100%;
 }
 div.gallery-card {    
  margin-bottom: 1.875rem; 
- border:1px thin solid red;
-}
-
-span.img.gallery-thumbnail { 
-  display:inline-block;
- border-radius: $radius; 
- height:200px; 
-}
-
-span.card-icon-open {  
+ height:250px;  
  overflow:hidden;
+ display:inline-block;
+ border:1px thin solid red;
+} 
+span img.gallery-thumbnail {  
+ border-radius: $radius;  
+ width: 97% ; 
+ height:auto; 
+}
+.responsive{
+  width:98%;
+}
+span.card-icon-open {  
  top: 50%;
- left: 50%;
- padding:5px;
+ left: 50%; 
+ padding:0px;
+ overflow:hidden;
  font-size: 2rem;
  color: #fff;
  cursor: pointer;
  opacity: 0; 
  transform: translate(-50%, -50%);
  transition: $transition;
- 
+ height:200px;
+ display:inline-block;
  &:focus,
  &:hover { 
   color: $black;
-  border:1px solid black;
+  border:5px solid black;
  }
 }
 
@@ -62,13 +70,14 @@ span.card-icon-open {
 .gallery-thumbnail ~ .card-icon-open:focus,
 .gallery-thumbnail ~ .card-icon-open:hover {
  opacity: 1;
+ z-index:100;
 } 
  div.modal-dialogue{
   // width: 40%;
  }
    
   .modal-container .modal, .modal-container .modal-backdrop {
-    position: relative;
+    position: absolute;
 
   }
 .modal-content {

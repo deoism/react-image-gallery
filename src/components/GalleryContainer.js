@@ -12,10 +12,8 @@ function importAll(r) {
   //Load local images
   let images = importAll(require.context('./images/', false, /\.(png|jpe?g|svg)$/));
 
-  imgUrls.push(...images);
-//if remote comes back ok
-  if(!fetch("https://sourceunsplash.com/3Z70SDuYs5g/800x600")){
-     imgUrls[0].push([
+//if remote comes back ok 
+   let remoteImages = [
  'https://source.unsplash.com/3Z70SDuYs5g/800x600',
  'https://source.unsplash.com/01vFmYAOqQ0/800x600',
  'https://source.unsplash.com/2Bjq3A7rGn4/800x600',
@@ -28,14 +26,27 @@ function importAll(r) {
  'https://source.unsplash.com/E4944K_4SvI/800x600',
  'https://source.unsplash.com/-hI5dX2ObAs/800x600',
  'https://source.unsplash.com/vZlTg_McCDo/800x600'
-]);
+];
 
-  }
+
+
+ fetch(...remoteImages)
+ .then((response)=>{
+console.log(response.blob());
+return response.blob();
+  
+ }).then((imageBlob)=>{
+  console.log(...imageBlob); 
+ }).catch((err)=>{
+   //error :(
+     console.log(err);
+ })
   
 
+imgUrls.push(...images, ...remoteImages);
 
 
 
 
-//console.log(...imgUrls)  
+console.log(...imgUrls)  
 export default { galleryContainer, imgUrls };
