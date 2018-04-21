@@ -1,19 +1,17 @@
-import React from 'react'; 
-
-
-
-
+import React from 'react';  
 
 export default class Header extends React.Component{
 
  render(){
         return(
-        <div id={'Gallery-Header'}  className={"  grid col "} >
-            <span className={"left  col-3"}>nav</span>
-            <span className={"left  col-3"}>Deoism Gallery</span>
-            <span className={"right col-3"}>menu</span>
-            
-        </div>
+        <div id={'Gallery-Header'} >
+              <div className={" galleryHeader"}>
+                <h1>Image Collage</h1> 
+                <p>Local and Remote images uploaded and displayed.</p>  
+              <p>in code: images is local images and </p> 
+              <p>in code: imagesRemote is displaying as well</p> 
+            </div>
+      </div>
          ) }
 
 

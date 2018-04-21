@@ -5,7 +5,6 @@ class GalleryModal extends React.Component {
     render() {
       
      if (this.props.isopen === "false") {
-
       return null;
      }  else {
      console.log(" this isopen " + this.props.isopen)
@@ -16,15 +15,19 @@ class GalleryModal extends React.Component {
   <Modal.Header>
     
   <Modal.Title>
-      { this.props.name   }
+      { this.props.name}
       </Modal.Title>
     </Modal.Header>
 
     <Modal.Body>  
-        <Image src={this.props.src} onClick={this.props.closemodal} className={"img-responsive  responsive rounded "}        
- aria-labelledby="contained-modal-title" 
-      /> 
-    
+        <Image responsive
+          src={this.props.src} 
+          onClick={this.props.closemodal} 
+          className={"img-responsive col-3 responsive rounded "}        
+          aria-labelledby="contained-modal-title" 
+          alt={"this.props.src"}  
+          /> 
+      
     </Modal.Body>
 
     <Modal.Footer>

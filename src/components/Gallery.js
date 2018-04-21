@@ -1,10 +1,9 @@
 import React from 'react';  
-import imgUrls  from './GalleryContainer';
+import imgUrls  from './GalleryData';
 import GalleryImage from './GalleryImage';
 import GalleryModal from './GalleryModal';
 import Header from './Header';
-require('../css/style.scss');
-
+// require('../css/style.scss');
 
  
 // Component for gallery
@@ -33,40 +32,41 @@ class Gallery extends React.Component{
      
      return( 
 
-      <section id="crank"   >
+      <section 
+       className={'grid-template-rows  '}   >
         <Header/>
         <GalleryModal    
-          className={'modal-dialogue modal fade col-lg-3} '}       
+          className={'modal-dialogue modal fade'}       
           isopen={this.state.isopen} 
           closemodal={this.closeModal}
           src={this.state.url}  
           alt={this.state.url}
           name={this.state.name}
-          aria-labelledby="contained-modal-title"
+          aria-labelledby={"contained-modal-title"}
        />
-       <div className='row'>
+       <div className={'gallery-card container'}>
         {
          // all  images with imgUrls[0]
          // local images imgUrls  
         imgUrls.imgUrls.map((url, index) => {
           let name='Image number ' + (index + 1);
-        return <div  key={'image ' + (index + 1 )} 
-          className='gallery-card '>
+        return <div key={'image ' + (index + 1 )} 
+          className='card-icon-open col-sm-6 col-md-4  col-lg-2  col-xl-1'>
            
             <span isopen={this.state.isopen} 
             name={name}
-            className='card-icon-open col-xs-2 col-sm-1 col-md-1 ' 
+            className={'gallery-thumbnail ' }
              value={url}
              
                 onClick={(e) => this.openModal(name,url, e)} >
 
-                <GalleryImage col-sm-1 col-md-1 col-lg-1
+                <GalleryImage 
                 rounded
-                className='gallery-thumbnail' 
+                className={'img-responsive'} 
                 src={url}  
                 alt={name}
                 isopen={this.state.isopen}
-
+                options={{"width":'100%'}}
                  />
     
            </span>

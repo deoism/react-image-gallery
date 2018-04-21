@@ -5,10 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-body{
-    font: normal 14px/1.4 Arial, Helvetica, sans-serif;
-}
+ 
 
 .skrollr-desktop body {
     height:100% !important;

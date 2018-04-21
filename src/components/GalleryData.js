@@ -10,8 +10,9 @@ function importAll(r) {
   let imgUrls = [];
   
   //Load local images
-  let images = importAll(require.context('./images/', false, /\.(png|jpe?g|svg)$/));
-
+  let images =importAll(require.context('./images/', false, /\.(png|jpe?g|svg)$/));
+  console.log("as pulled ...images: ");
+console.log(...images);
 //if remote comes back ok 
    let remoteImages = [
  'https://source.unsplash.com/3Z70SDuYs5g/800x600',
@@ -27,18 +28,18 @@ function importAll(r) {
  'https://source.unsplash.com/-hI5dX2ObAs/800x600',
  'https://source.unsplash.com/vZlTg_McCDo/800x600'
 ];
+console.log("pre ...fetch :");
+console.log(...remoteImages,remoteImages.length);
+let length= remoteImages.length;
 
-
-
- fetch(...remoteImages)
+ fetch(...remoteImages,{'length':{length}})
  .then((response)=>{
-console.log(response.blob());
-return response.blob();
-  
- }).then((imageBlob)=>{
-  console.log(...imageBlob); 
- }).catch((err)=>{
-   //error :(
+     // console.log(response.blob());
+      return response.blob()})
+.then((imageBlob)=>{
+      console.log(...imageBlob)})
+.catch((err)=>{
+        //error :(
      console.log(err);
  })
   
