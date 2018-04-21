@@ -3,7 +3,7 @@ import imgUrls  from './GalleryData';
 import GalleryImage from './GalleryImage';
 import GalleryModal from './GalleryModal';
 import Header from './Header';
-// require('../css/style.scss');
+ require('../css/style.scss');
 
  
 // Component for gallery
@@ -44,14 +44,14 @@ class Gallery extends React.Component{
           name={this.state.name}
           aria-labelledby={"contained-modal-title"}
        />
-       <div className={'gallery-card container'}>
+       <div className={'gallery-card '}>
         {
          // all  images with imgUrls[0]
          // local images imgUrls  
         imgUrls.imgUrls.map((url, index) => {
           let name='Image number ' + (index + 1);
         return <div key={'image ' + (index + 1 )} 
-          className='card-icon-open col-sm-6 col-md-4  col-lg-2  col-xl-1'>
+          className='card-icon-open col-sm-4 col-md-3  col-lg-2  col-xl-1'>
            
             <span isopen={this.state.isopen} 
             name={name}
@@ -75,7 +75,10 @@ class Gallery extends React.Component{
         })
        }
       </div>
-    
+    <footer className={'footer'}>
+
+      <h1>Footer data</h1>
+      </footer>
      </section>
      )
     }

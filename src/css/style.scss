@@ -12,7 +12,7 @@ html {
 body { 
   background: cornsilk;
 
-  background-image: url("./logo.png");
+  background-image: url("../components/images/avatars/1.jpg");
   background-repeat: no-repeat;
   background-position: center; 
  text-align:center;
@@ -31,6 +31,15 @@ body {
 }
 
 div.galleryHeader{
+  top:-400px;
+  background:none;
+  height:400px;  
+  display:block;
+  padding:3em;
+}
+
+div.footer{
+  top:-400px;
   background:none;
   height:400px;  
   display:block;
@@ -39,9 +48,13 @@ div.galleryHeader{
 
 div#Gallery-Header{
   position:absolute;
-  z-index:25;
-  height:40em;
-  background-image:url("./components/images/portrait.jpg");
+  top:0;
+ 
+  height:100em;
+  background-position:top;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-image:url("/components/images/portrait.jpg");
 }
  
 #crank{  
@@ -64,15 +77,19 @@ max-height:800px;
 
 div.gallery-card {    
  margin-bottom: 1.875rem; 
-
- max-height:250px;  
+padding:5em;
+ height:250px;  
  overflow:hidden; 
  border:1px thin solid red; 
 } 
 
-span img.gallery-thumbnail {  
+span.gallery-thumbnail { 
+  vertical-align:middle;
+ display:inline-block; 
  border-radius: $radius;  
  width: 97% ;  
+ min-height:250px;
+padding:3em;
 }
 .center{
   margin-left:auto;
@@ -106,7 +123,7 @@ span.card-icon-open {
  }
 }
 
-div.gallery-thumbnail{
+span.gallery-thumbnail{
   padding:2em;
 }
 
