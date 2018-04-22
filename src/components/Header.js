@@ -6,8 +6,8 @@ export default class Header extends React.Component{
         return(
         <div id={'Gallery-Header'} >
               <div className={" galleryHeader"}>
-                <h1>Image Collage</h1> 
-                <p>Local and Remote images uploaded and gallery.</p>   
+                <h1>Image Mosaic</h1> 
+                <p>Local and Remote images uploaded and galleried.</p>   
             </div>
       </div>
          ) }
