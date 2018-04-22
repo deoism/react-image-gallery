@@ -1,0 +1,173 @@
+
+
+html {
+ font-size: 16px;   
+}  
+
+body { 
+  background-color:black;
+  margin:0;
+  padding:0;
+ text-align:center;
+}
+section.container{
+  margin:0;
+  padding:0;
+}
+.galleryContainer { 
+  
+  z-index:50; 
+  padding-top: .9375rem;  
+}
+
+div.galleryHeader{ 
+  background: rgba(0,0,0,.5);
+  color: white;
+  max-height: 400px;
+  display: inline-block;  
+  position: relative;
+  width: 100%;
+}
+
+div.footer{
+    background:none;
+  height:400px;  
+  display:block;
+  color:white;
+  padding:3em;
+  border:solid 1px white thin;
+}
+
+div#Gallery-Header{
+  top: -2em;
+  position: relative;
+  background-image: url(/static/media/portrait.d24daa01.jpg);
+  background-size: cover;
+  background-position: 80% -20%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 34em;
+  -webkit-animation: mymove 5s ease-in; /* Safari 4.0 - 8.0 */
+  animation: mymove 5s ease-in;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  50% {background-position: 50% 27%;}
+}
+
+@keyframes mymove {
+  50% {background-position: 50% 27%;}
+
+}
+ 
+#crank{  
+  padding-top:2em;
+  width:98%;
+  height:auto;
+  position:relative;
+  display:block;
+  z-index: inherit;
+}
+
+div.border-black{
+  border:1px thin  black solid;
+display:inline-block;
+position:relative;
+width:600px;
+overflow:hidden;
+max-height:800px;
+}
+
+div.gallery-card {    
+  margin-bottom: 1.875rem;
+  height: auto;
+  top: -5em;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  background-color: black;
+} 
+
+span.gallery-thumbnail { 
+  vertical-align:middle;
+  display:inline-block; 
+  border-radius: 5px;  
+  width: 97% ;   
+  padding:2em;
+} 
+
+.center{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;  
+}
+
+.left{
+  float:left;
+  margin-left:0;
+  text-align:left;
+}
+.responsive{
+  width:98%;
+}
+div.card-icon-open { 
+   
+ transition: all 1.25s ease-in-out;   
+}
+
+.gallery-thumbnail:focus ~ .card-icon-open,
+.gallery-thumbnail:hover ~ .card-icon-open,
+.gallery-thumbnail ~ .card-icon-open:focus,
+.gallery-thumbnail ~ .card-icon-open:hover {
+ opacity: 1;
+ z-index:100;
+}  
+    
+  div.modal-backdrop {
+    height:100%;
+    width:100%;
+    opacity:1;
+    position:absolute;
+    z-index:inherit -5;
+    background-color:black;
+  }
+
+.modal-content {
+   justify-content:center;
+    top: 0;    
+    background: rgba(21,21,21,.75); 
+   
+}
+div.modal-dialogue{
+  
+  position: relative;
+  width: auto;
+  margin: 10px;
+  border: solid white 1px;
+  color: white;
+  opacity: 7;
+}
+div.modal-title{
+  color:white;
+}
+div.modal-body {   
+ z-index: 110; 
+ padding: 0;   
+ border-radius: 5px;
+ transition: all 1.25s ease-in-out; 
+ background-color:black;
+
+}
+ div.modal-footer{
+   position:relative;
+ }
+.modal-close { 
+ top: 0;
+ right: 8px;
+ font-size: 1.5rem;
+ color: #000;
+ transform: translate(-50%, -50%);
+ transition: all 1.25s ease-in-out;
+  
+}

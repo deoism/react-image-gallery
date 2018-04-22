@@ -3,7 +3,7 @@ import imgUrls  from './GalleryData';
 import GalleryImage from './GalleryImage';
 import GalleryModal from './GalleryModal';
 import Header from './Header';
- require('../css/style.scss');
+ require('../css/style.css');
 
  
 // Component for gallery
@@ -75,10 +75,17 @@ class Gallery extends React.Component{
         })
        }
       </div>
-    <footer className={'footer'}>
+    <div className={'footer'}>
 
-      <h1>Footer data</h1>
-      </footer>
+      <h3>
+        Anthony Dickerson
+        <br/ >
+       ~347 935 1813~
+      </h3>
+      <p>
+        React, Node, css3, html5
+      </p>
+      </div>
      </section>
      )
     }
