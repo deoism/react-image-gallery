@@ -33,10 +33,10 @@ class Gallery extends React.Component{
      return( 
 
       <section 
-       className={'grid-template-rows  '}   >
-        <Header/>
+       className={'clear-both '}   >
+        
         <GalleryModal    
-          className={'modal-dialogue modal fade'}       
+          className={'modal-dialogue '}       
           isopen={this.state.isopen} 
           closemodal={this.closeModal}
           src={this.state.url}  
@@ -44,6 +44,7 @@ class Gallery extends React.Component{
           name={this.state.name}
           aria-labelledby={"contained-modal-title"}
        />
+       <Header/>
        <div className={'gallery-card '}>
         {
          // all  images with imgUrls[0]

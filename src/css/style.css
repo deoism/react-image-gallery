@@ -20,15 +20,6 @@ section.container{
   padding-top: .9375rem;  
 }
 
-div.galleryHeader{ 
-  background: rgba(0,0,0,.5);
-  color: white;
-  max-height: 400px;
-  display: inline-block;  
-  position: relative;
-  width: 100%;
-}
-
 div.footer{
     background:none;
   height:400px;  
@@ -37,30 +28,63 @@ div.footer{
   padding:3em;
   border:solid 1px white thin;
 }
+div.heroImage{
+  top:100px;
+  height:inherit;
+  margin:0;
+  padding:0;
+  display:none;
+  position:absolute;
+}
 
-div#Gallery-Header{
+div.galleryHeader{  
+  color: white;
+  max-height: 24em;
+  opacity:1;
   top: -2em;
+  width:100%;
+  display: inline-block;
+  position: relative;
+  width:100%;
+}
+
+div#Gallery-Header{ 
   position: relative;
   background-image: url(/static/media/portrait.d24daa01.jpg);
   background-size: cover;
-  background-position: 80% -20%;
+  color:white;
+  background-position: 50% 0%; 
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 34em;
-  -webkit-animation: mymove 5s ease-in; /* Safari 4.0 - 8.0 */
-  animation: mymove 5s ease-in;
+  background-attachment: fixed;  
+  height:30em;
+  display:block;
+  opacity: 1;
+  -webkit-animation: mymove 6s ease-out   ; /* Safari 4.0 - 8.0 */
+  animation: mymove 6s ease-out  ;
 }
-
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes mymove {
-  50% {background-position: 50% 27%;}
+  0% {background-position: 0%  0%; width:0; color:black;  opacity:0}
+  50% {  color:grey;}
 }
 
 @keyframes mymove {
-  50% {background-position: 50% 27%;}
-
+  0% {background-position:0% 0%;   color:black;  opacity:0}
+  50%{  color:grey;}
 }
- 
+
+img.pixel{
+  width:1px;
+  height:auto;
+}
+div.heroImg{
+margin:0;
+padding:0;
+width:100%;
+height:auto;
+display:inherit;
+position:fixed;
+}
 #crank{  
   padding-top:2em;
   width:98%;
@@ -80,14 +104,29 @@ max-height:800px;
 }
 
 div.gallery-card {    
-  margin-bottom: 1.875rem;
-  height: auto;
-  top: -5em;
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  background-color: black;
-} 
+
+      margin-bottom: 1.875rem;
+    height: auto; 
+    opacity: 1;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+    -webkit-animation: phototray 10s ease-in;
+    animation: phototray 10s ease-in;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes phototray {
+  0% {margin-top: 50% ; opacity:0;}
+  50%{opacity:0;}
+}
+
+@keyframes phototray {
+  0% {margin-top: 50% ;opacity:0}
+  50% {opacity:0;}
+
+}
 
 span.gallery-thumbnail { 
   vertical-align:middle;
@@ -109,7 +148,8 @@ span.gallery-thumbnail {
   text-align:left;
 }
 .responsive{
-  width:98%;
+  width:auto;
+  height:100%
 }
 div.card-icon-open { 
    
@@ -123,41 +163,29 @@ div.card-icon-open {
  opacity: 1;
  z-index:100;
 }  
-    
-  div.modal-backdrop {
-    height:100%;
-    width:100%;
-    opacity:1;
-    position:absolute;
-    z-index:inherit -5;
-    background-color:black;
-  }
+   
 
 .modal-content {
    justify-content:center;
-    top: 0;    
-    background: rgba(21,21,21,.75); 
+    top: 0;     
    
 }
 div.modal-dialogue{
-  
-  position: relative;
-  width: auto;
-  margin: 10px;
-  border: solid white 1px;
-  color: white;
-  opacity: 7;
+   
+  width: auto;                                  
+  margin: 2px;
+  border: solid rgb(170, 182, 0) 1px;
+  color: white; 
+   
 }
 div.modal-title{
-  color:white;
+  color:white; 
 }
 div.modal-body {   
  z-index: 110; 
  padding: 0;   
  border-radius: 5px;
  transition: all 1.25s ease-in-out; 
- background-color:black;
-
 }
  div.modal-footer{
    position:relative;
@@ -168,6 +196,6 @@ div.modal-body {
  font-size: 1.5rem;
  color: #000;
  transform: translate(-50%, -50%);
- transition: all 1.25s ease-in-out;
+ transition: all 1.25s ease-in ;
   
 }

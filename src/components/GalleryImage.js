@@ -5,7 +5,7 @@ class GalleryImage extends React.Component {
      return(
       <img 
             className={this.props.className } 
-            src={this.props.src} 
+            src={this.props.src}  
             alt={this.props.alt}
             options={this.props.options}
           />

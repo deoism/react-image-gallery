@@ -23,7 +23,7 @@ class GalleryModal extends React.Component {
         <Image responsive
           src={this.props.src} 
           onClick={this.props.closemodal} 
-          className={"img-responsive col-3 responsive rounded "}        
+          className={"img-responsive col-3  rounded "}        
           aria-labelledby="contained-modal-title" 
           alt={"this.props.src"}  
           /> 
