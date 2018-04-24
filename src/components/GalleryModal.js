@@ -1,29 +1,51 @@
 import React from 'react'; 
-
-// Component for gallery modal
+import {Modal, Button, Image } from 'react-bootstrap'; 
+ // Component for gallery modal
 class GalleryModal extends React.Component {
     render() {
+      
      if (this.props.isopen === "false") {
       return null;
-     } else{
-
+     }  else {
+     console.log(" this isopen " + this.props.isopen)
+ return(  
       
-     return( 
-         alert("gallery modal showmodal : " + (this.state.showModal)),
-      <div isopen={this.props.isopen} 
-      className='modal-overlay' 
-      onClick={this.props.onClick} 
-      name={this.props.name}>
-       <div className='modal-body'>
-        <a className='modal-close' href='#open' onClick={this.props.isclosed}>
-        <span className='fa fa-times'></span>
-        </a>
+  <Modal.Dialog isopen={this.props.isopen}  className={this.className}  >
+    {this.showModal} 
+  <Modal.Header>
     
-        <img src={this.props.src} alt={this.props.alt}/>    
-       </div>
-      </div>
-     )
-    }}
-   } 
+  <Modal.Title>
+      { this.props.name}
+      </Modal.Title>
+    </Modal.Header>
 
+    <Modal.Body>  
+        <Image responsive
+          src={this.props.src} 
+          onClick={this.props.closemodal} 
+          className={"img-responsive col-3  rounded "}        
+          aria-labelledby="contained-modal-title" 
+          alt={"this.props.src"}  
+          /> 
+      
+    </Modal.Body>
+
+    <Modal.Footer>
+      <Button 
+      onClick={this.props.closemodal} 
+      data-dismis={"modal"} 
+      type={'button'} 
+      className={'btn btn-default'}
+      isopen={this.props.isopen} 
+      bsStyle="primary" 
+      bsSize="large" 
+      >Close</Button>
+    
+    </Modal.Footer>
+  </Modal.Dialog> 
+       
+     )
+   } }
+   }
+ 
    export default GalleryModal;

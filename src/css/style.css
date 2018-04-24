@@ -1,0 +1,201 @@
+
+
+html {
+ font-size: 16px;   
+}  
+
+body { 
+  background-color:black;
+  margin:0;
+  padding:0;
+ text-align:center;
+}
+section.container{
+  margin:0;
+  padding:0;
+}
+.galleryContainer { 
+  
+  z-index:50; 
+  padding-top: .9375rem;  
+}
+
+div.footer{
+    background:none;
+  height:400px;  
+  display:block;
+  color:white;
+  padding:3em;
+  border:solid 1px white thin;
+}
+div.heroImage{
+  top:100px;
+  height:inherit;
+  margin:0;
+  padding:0;
+  display:none;
+  position:absolute;
+}
+
+div.galleryHeader{  
+  color: white;
+  max-height: 24em;
+  opacity:1;
+  top: -2em;
+  width:100%;
+  display: inline-block;
+  position: relative;
+  width:100%;
+}
+
+div#Gallery-Header{ 
+  position: relative;
+  background-image: url(/static/media/portrait.d24daa01.jpg);
+  background-size: cover;
+  color:white;
+  background-position: 50% 0%; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  height:30em;
+  display:block;
+  opacity: 1;
+  -webkit-animation: mymove 6s ease-out   ; /* Safari 4.0 - 8.0 */
+  animation: mymove 6s ease-out  ;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  0% {background-position: 0%  0%; width:0; color:black;  opacity:0}
+  50% {  color:grey;}
+}
+
+@keyframes mymove {
+  0% {background-position:0% 0%;   color:black;  opacity:0}
+  50%{  color:grey;}
+}
+
+img.pixel{
+  width:1px;
+  height:auto;
+}
+div.heroImg{
+margin:0;
+padding:0;
+width:100%;
+height:auto;
+display:inherit;
+position:fixed;
+}
+#crank{  
+  padding-top:2em;
+  width:98%;
+  height:auto;
+  position:relative;
+  display:block;
+  z-index: inherit;
+}
+
+div.border-black{
+  border:1px thin  black solid;
+display:inline-block;
+position:relative;
+width:600px;
+overflow:hidden;
+max-height:800px;
+}
+
+div.gallery-card {    
+
+      margin-bottom: 1.875rem;
+    height: auto; 
+    opacity: 1;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+    -webkit-animation: phototray 10s ease-in;
+    animation: phototray 10s ease-in;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes phototray {
+  0% {margin-top: 50% ; opacity:0;}
+  50%{opacity:0;}
+}
+
+@keyframes phototray {
+  0% {margin-top: 50% ;opacity:0}
+  50% {opacity:0;}
+
+}
+
+span.gallery-thumbnail { 
+  vertical-align:middle;
+  display:inline-block; 
+  border-radius: 5px;  
+  width: 97% ;   
+  padding:2em;
+} 
+
+.center{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;  
+}
+
+.left{
+  float:left;
+  margin-left:0;
+  text-align:left;
+}
+.responsive{
+  width:auto;
+  height:100%
+}
+div.card-icon-open { 
+   
+ transition: all 1.25s ease-in-out;   
+}
+
+.gallery-thumbnail:focus ~ .card-icon-open,
+.gallery-thumbnail:hover ~ .card-icon-open,
+.gallery-thumbnail ~ .card-icon-open:focus,
+.gallery-thumbnail ~ .card-icon-open:hover {
+ opacity: 1;
+ z-index:100;
+}  
+   
+
+.modal-content {
+   justify-content:center;
+    top: 0;     
+   
+}
+div.modal-dialogue{
+   
+  width: auto;                                  
+  margin: 2px;
+  border: solid rgb(170, 182, 0) 1px;
+  color: white; 
+   
+}
+div.modal-title{
+  color:white; 
+}
+div.modal-body {   
+ z-index: 110; 
+ padding: 0;   
+ border-radius: 5px;
+ transition: all 1.25s ease-in-out; 
+}
+ div.modal-footer{
+   position:relative;
+ }
+.modal-close { 
+ top: 0;
+ right: 8px;
+ font-size: 1.5rem;
+ color: #000;
+ transform: translate(-50%, -50%);
+ transition: all 1.25s ease-in ;
+  
+}
